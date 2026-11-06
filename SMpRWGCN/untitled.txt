@@ -1,0 +1,90 @@
+adaptive
+.................
+id	N	train_ra	val_ra	dataset	feat_flag	gcn	normalize	aggr	alpha	beta	gama	lr	dr	h_dim	weight_decay	role_generate	feat_generate	seed	topk	force_regen
+wis_nb_k16_b80g20_s8t	10	60	20	wisconsin	True	True	degree	mean_concat	0	1	4	0.01	0.6	128	0.01	StrucWalkre	onehot	8	18	False
+wis_nb_k16_b80g20_s8f	10	60	20	wisconsin	False	True	degree	mean_concat	0	1	4	0.01	0.6	128	0.01	StrucWalkre	onehot	8	18	False
+tx_peak_s8t	10	60	20	texas	True	True	degree	mean_concat	0	0.999	0.001	0.005	0.525	128	0.005	StrucWalkre	onehot	8	20	False
+cr_peak_s8t_r5_h64	10	60	20	cornell	True	True	degree	mean_concat	0	1	1	0.01	0.55	64	0.01	StrucWalkre	onehot	42	18	False
+cr_peak_s8t_r5_h128	10	60	20	cornell	True	True	degree	mean_concat	0	1	1	0.01	0.55	128	0.01	StrucWalkre	onehot	42	18	False
+cr_peak_s8t_r5_h128	10	60	20	cornell	False	True	degree	mean_concat	0.5	0	0.5	0.01	0.2	128	0.01	StrucWalkre	onehot	42	18	True
+cr_peak_s8t_r5_h128	10	60	20	cornell	False	True	degree	mean_concat	0.5	0	0.5	0.01	0.2	128	0.01	StrucWalkre	onehot	42	18	False
+squirrel_101_best	10	60	20	squirrel	False	True	degree	mean_concat	0.001	0	0.999	0.01	0.55	256	1e-05	StrucWalkre	onehot	8	14	False
+squirrel_101_best	10	60	20	squirrel	True	True	degree	mean_concat	0.001	0	0.999	0.01	0.55	256	1e-05	StrucWalkre	onehot	8	14	False
+citeseer_011_bestf	10	60	20	citeseer	False	True	degree	mean_concat	0.0	0.999	0.001	0.005	0.45	128	0.0005	StrucWalkre	onehot	42	20	True
+citeseer2_011_bestf	10	60	20	citeseer	False	True	degree	mean_concat	0.0	0.999	0.001	0.005	0.55	128	0.0005	StrucWalkre	onehot	42	20	True
+citeseer_011_bestt	10	60	20	citeseer	True	True	degree	mean_concat	0.0	0.99	0.01	0.01	0.4	64	0.0005	StrucWalkre	onehot	42	20	True
+chameleon_110_bestt	10	60	20	chameleon	True	True	degree	mean_concat	0.02	0.0	0.82	0.015	0.45	128	1e-05	StrucWalkre	onehot	8	16	False
+chameleon_110_bestf	10	60	20	chameleon	False	True	degree	mean_concat	0.02	0.0	0.82	0.015	0.45	128	1e-05	StrucWalkre	onehot	8	16	False
+cora_110_bestt	10	60	20	cora	True	True	degree	mean_concat	0.5	0.5	0	0.012	0.55	128	0.0005	StrucWalkre	onehot	8	16	True
+cora_110_bestf	10	60	20	cora	False	True	degree	mean_concat	0.5	0.5	0	0.012	0.55	128	0.0005	StrucWalkre	onehot	8	16	True
+actor110	10	60	20	actor	True	True	degree	mean_concat	0.999	0.001	0.0	0.02	0.556	128	0.0001	StrucWalkre	onehot	8	20	True
+actor101	10	60	20	actor	True	True	degree	mean_concat	0.999	0.0	0.001	0.02	0.556	128	0.0001	StrucWalkre	onehot	8	20	True
+actor101	10	60	20	actor	True	True	degree	mean_concat	0.20	0.0	0.80	0.02	0.556	128	0.0001	StrucWalkre	onehot	8	20	True
+pubmed_best_012_60	10	60	20	pubmed	True	True	degree	mean_concat	0	0.9	0.1	0.02	0.60	128	1e-06	StrucWalkre	onehot	42	14	True
+pubmed_best_012_60	10	60	20	pubmed	True	True	degree	mean_concat	0	0.9	0.1	0.02	0.60	128	1e-06	StrucWalkre	onehot	8	14	True
+.......
+
+id	N	train_ra	val_ra	dataset	feat_flag	backbone	normalize	aggr	alpha	beta	gama	lr	dr	h_dim	weight_decay	role_generate	feat_generate	seed	topk	force_regen
+gcn_wis_nb_k16_b80g20_s8t	10	60	20	wisconsin	True	gcn	degree	mean_concat	0	1	4	0.01	0.6	128	0.01	StrucWalkre	onehot	8	18	True
+gat_wis_nb_k16_b80g20_s8t	10	60	20	wisconsin	True	gat	degree	mean_concat	0	1	4	0.01	0.6	128	0.01	StrucWalkre	onehot	8	18	True
+sage_wis_nb_k16_b80g20_s8t	10	60	20	wisconsin	True	sage	degree	mean_concat	0	1	4	0.01	0.6	128	0.01	StrucWalkre	onehot	8	18	True
+deeptfgp_wis_nb_k16_b80g20_s8t	10	60	20	wisconsin	True	deeptfgp	degree	mean_concat	0	1	4	0.01	0.6	128	0.01	StrucWalkre	onehot	8	18	True
+mlp_wis_nb_k16_b80g20_s8t	10	60	20	wisconsin	True	mlp	degree	mean_concat	0	1	4	0.01	0.6	128	0.01	StrucWalkre	onehot	8	18	True
+gcn_wis_nb_k16_b80g20_s8f	10	60	20	wisconsin	False	gcn	degree	mean_concat	0	1	4	0.01	0.6	128	0.01	StrucWalkre	onehot	8	18	True
+gat_wis_nb_k16_b80g20_s8f	10	60	20	wisconsin	False	gat	degree	mean_concat	0	1	4	0.01	0.6	128	0.01	StrucWalkre	onehot	8	18	True
+sage_wis_nb_k16_b80g20_s8f	10	60	20	wisconsin	False	sage	degree	mean_concat	0	1	4	0.01	0.6	128	0.01	StrucWalkre	onehot	8	18	True
+deeptfgp_wis_nb_k16_b80g20_s8f	10	60	20	wisconsin	False	deeptfgp	degree	mean_concat	0	1	4	0.01	0.6	128	0.01	StrucWalkre	onehot	8	18	True
+mlp_wis_nb_k16_b80g20_s8f	10	60	20	wisconsin	False	mlp	degree	mean_concat	0	1	4	0.01	0.6	128	0.01	StrucWalkre	onehot	8	18	True
+gcn_tx_peak_s8t	10	60	20	texas	True	gcn	degree	mean_concat	0	0.999	0.001	0.005	0.525	128	0.005	StrucWalkre	onehot	8	20	True
+gat_tx_peak_s8t	10	60	20	texas	True	gat	degree	mean_concat	0	0.999	0.001	0.005	0.525	128	0.005	StrucWalkre	onehot	8	20	True
+sage_tx_peak_s8t	10	60	20	texas	True	sage	degree	mean_concat	0	0.999	0.001	0.005	0.525	128	0.005	StrucWalkre	onehot	8	20	True
+deeptfgp_tx_peak_s8t	10	60	20	texas	True	deeptfgp	degree	mean_concat	0	0.999	0.001	0.005	0.525	128	0.005	StrucWalkre	onehot	8	20	True
+mlp_tx_peak_s8t	10	60	20	texas	True	mlp	degree	mean_concat	0	0.999	0.001	0.005	0.525	128	0.005	StrucWalkre	onehot	8	20	True
+gcn_cr_peak_s8t_r5_h64	10	60	20	cornell	True	gcn	degree	mean_concat	0	1	1	0.01	0.55	64	0.01	StrucWalkre	onehot	42	18	True
+gat_cr_peak_s8t_r5_h64	10	60	20	cornell	True	gat	degree	mean_concat	0	1	1	0.01	0.55	64	0.01	StrucWalkre	onehot	42	18	True
+sage_cr_peak_s8t_r5_h64	10	60	20	cornell	True	sage	degree	mean_concat	0	1	1	0.01	0.55	64	0.01	StrucWalkre	onehot	42	18	True
+deeptfgp_cr_peak_s8t_r5_h64	10	60	20	cornell	True	deeptfgp	degree	mean_concat	0	1	1	0.01	0.55	64	0.01	StrucWalkre	onehot	42	18	True
+mlp_cr_peak_s8t_r5_h64	10	60	20	cornell	True	mlp	degree	mean_concat	0	1	1	0.01	0.55	64	0.01	StrucWalkre	onehot	42	18	True
+gcn_cr_peak_s8t_r5_h128	10	60	20	cornell	False	gcn	degree	mean_concat	0.5	0	0.5	0.01	0.2	128	0.01	StrucWalkre	onehot	42	18	True
+gat_cr_peak_s8t_r5_h128	10	60	20	cornell	False	gat	degree	mean_concat	0.5	0	0.5	0.01	0.2	128	0.01	StrucWalkre	onehot	42	18	True
+sage_cr_peak_s8t_r5_h128	10	60	20	cornell	False	sage	degree	mean_concat	0.5	0	0.5	0.01	0.2	128	0.01	StrucWalkre	onehot	42	18	True
+deeptfgp_cr_peak_s8t_r5_h128	10	60	20	cornell	False	deeptfgp	degree	mean_concat	0.5	0	0.5	0.01	0.2	128	0.01	StrucWalkre	onehot	42	18	True
+mlp_cr_peak_s8t_r5_h128	10	60	20	cornell	False	mlp	degree	mean_concat	0.5	0	0.5	0.01	0.2	128	0.01	StrucWalkre	onehot	42	18	True
+gcn_citeseer2_011_bestf	10	60	20	citeseer	False	gcn	degree	mean_concat	0.0	0.999	0.001	0.005	0.55	128	0.0005	StrucWalkre	onehot	42	20	True
+
+
+gat_citeseer2_011_bestf	10	60	20	citeseer	False	gat	degree	mean_concat	0.0	0.999	0.001	0.005	0.55	128	0.0005	StrucWalkre	onehot	42	20	True
+sage_citeseer2_011_bestf	10	60	20	citeseer	False	sage	degree	mean_concat	0.0	0.999	0.001	0.005	0.55	128	0.0005	StrucWalkre	onehot	42	20	True
+deeptfgp_citeseer2_011_bestf	10	60	20	citeseer	False	deeptfgp	degree	mean_concat	0.0	0.999	0.001	0.005	0.55	128	0.0005	StrucWalkre	onehot	42	20	True
+mlp_citeseer2_011_bestf	10	60	20	citeseer	False	mlp	degree	mean_concat	0.0	0.999	0.001	0.005	0.55	128	0.0005	StrucWalkre	onehot	42	20	True
+gcn_citeseer_011_bestt	10	60	20	citeseer	True	gcn	degree	mean_concat	0.0	0.99	0.01	0.01	0.4	64	0.0005	StrucWalkre	onehot	42	20	True
+gat_citeseer_011_bestt	10	60	20	citeseer	True	gat	degree	mean_concat	0.0	0.99	0.01	0.01	0.4	64	0.0005	StrucWalkre	onehot	42	20	True
+sage_citeseer_011_bestt	10	60	20	citeseer	True	sage	degree	mean_concat	0.0	0.99	0.01	0.01	0.4	64	0.0005	StrucWalkre	onehot	42	20	True
+deeptfgp_citeseer_011_bestt	10	60	20	citeseer	True	deeptfgp	degree	mean_concat	0.0	0.99	0.01	0.01	0.4	64	0.0005	StrucWalkre	onehot	42	20	True
+mlp_citeseer_011_bestt	10	60	20	citeseer	True	mlp	degree	mean_concat	0.0	0.99	0.01	0.01	0.4	64	0.0005	StrucWalkre	onehot	42	20	True
+gat_chameleon_110_bestt	10	60	20	chameleon	True	gat	degree	mean_concat	0.02	0.0	0.82	0.015	0.45	128	1e-05	StrucWalkre	onehot	8	16	True
+gat_chameleon_110_bestf	10	60	20	chameleon	False	gat	degree	mean_concat	0.02	0.0	0.82	0.015	0.45	128	1e-05	StrucWalkre	onehot	8	16	True
+gat_cora_110_bestt	10	60	20	cora	True	gat	degree	mean_concat	0.5	0.5	0	0.012	0.55	128	0.0005	StrucWalkre	onehot	8	16	True
+gat_cora_110_bestf	10	60	20	cora	False	gat	degree	mean_concat	0.5	0.5	0	0.012	0.55	128	0.0005	StrucWalkre	onehot	8	16	True
+gi_gcn_citeseer2_011_bestf	10	60	20	citeseer	False	gi_gcn	degree	mean_concat	0.0	0.999	0.001	0.005	0.55	128	0.0005	StrucWalkre	onehot	42	20	True	3
+gi_gcn_chameleon_110_bestt	10	60	20	chameleon	True	gi_gcn	degree	mean_concat	0.02	0.0	0.82	0.015	0.45	128	1e-05	StrucWalkre	onehot	8	16	True	3
+gi_gcn_chameleon_110_bestf	10	60	20	chameleon	False	gi_gcn	degree	mean_concat	0.02	0.0	0.82	0.015	0.45	128	1e-05	StrucWalkre	onehot	8	16	True	3
+gi_gcn_cora_110_bestt	10	60	20	cora	True	gi_gcn	degree	mean_concat	0.5	0.5	0	0.012	0.55	128	0.0005	StrucWalkre	onehot	8	16	True	3
+gi_gcn_cora_110_bestf	10	60	20	cora	False	gi_gcn	degree	mean_concat	0.5	0.5	0	0.012	0.55	128	0.0005	StrucWalkre	onehot	8	16	True	3
+.........
+tik
+iagcn_wis_nb_k16_b80g20_s8t	10	60	20	wisconsin	True	iagcn	degree	mean_concat	0	1	4	0.01	0.6	128	0.01	StrucWalkre	onehot	8	18	True	3
+gi_gcn_wis_nb_k16_b80g20_s8t	10	60	20	wisconsin	True	gi_gcn	degree	mean_concat	0	1	4	0.01	0.6	128	0.01	StrucWalkre	onehot	8	18	True	3
+iagcn_wis_nb_k16_b80g20_s8f	10	60	20	wisconsin	False	iagcn	degree	mean_concat	0	1	4	0.01	0.6	128	0.01	StrucWalkre	onehot	8	18	True	3
+gi_gcn_wis_nb_k16_b80g20_s8f	10	60	20	wisconsin	False	gi_gcn	degree	mean_concat	0	1	4	0.01	0.6	128	0.01	StrucWalkre	onehot	8	18	True	3
+iagcn_tx_peak_s8t	10	60	20	texas	True	iagcn	degree	mean_concat	0	0.999	0.001	0.005	0.525	128	0.005	StrucWalkre	onehot	8	20	True	3
+gi_gcn_tx_peak_s8t	10	60	20	texas	True	gi_gcn	degree	mean_concat	0	0.999	0.001	0.005	0.525	128	0.005	StrucWalkre	onehot	8	20	True	3
+iagcn_cr_peak_s8t_r5_h64	10	60	20	cornell	True	iagcn	degree	mean_concat	0	1	1	0.01	0.55	64	0.01	StrucWalkre	onehot	42	18	True	3
+gi_gcn_cr_peak_s8t_r5_h64	10	60	20	cornell	True	gi_gcn	degree	mean_concat	0	1	1	0.01	0.55	64	0.01	StrucWalkre	onehot	42	18	True	3
+iagcn_cr_peak_s8t_r5_h128	10	60	20	cornell	False	iagcn	degree	mean_concat	0.5	0	0.5	0.01	0.2	128	0.01	StrucWalkre	onehot	42	18	True	3
+gi_gcn_cr_peak_s8t_r5_h128	10	60	20	cornell	False	gi_gcn	degree	mean_concat	0.5	0	0.5	0.01	0.2	128	0.01	StrucWalkre	onehot	42	18	True	3
+nsa_tx_peak_s8t	10	60	20	texas	False	nsa	degree	mean_concat	0	0.999	0.001	0.005	0.525	128	0.005	StrucWalkre	onehot	8	20	True	3
+iagcn_tx_peak_s8t	10	60	20	texas	False	iagcn	degree	mean_concat	0	0.999	0.001	0.005	0.525	128	0.005	StrucWalkre	onehot	8	20	True	3
+gi_gcn_tx_peak_s8t	10	60	20	texas	False	gi_gcn	degree	mean_concat	0	0.999	0.001	0.005	0.525	128	0.005	StrucWalkre	onehot	8	20	True	3
+gcn_squirrel_101_best	10	60	20	squirrel	True	gcn	degree	mean_concat	0.01	0	0.9	0.01	0.55	256	1e-05	StrucWalkre	onehot	8	20	False	3
+gcn_pubmed_011_f	10	60	20	pubmed	True	gcn	degree	mean_concat	0	1	1	0.03	0.556	64	0.0001	StrucWalkre	onehot	8	18	False	3

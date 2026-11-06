@@ -1,0 +1,90 @@
+import torch
+from sklearn.metrics import f1_score
+import random
+import numpy as np
+def preprocess_nxgraph(graph):
+    node2idx = {}
+    idx2node = []
+    node_size = 0
+    for node in graph.nodes():
+        node2idx[node] = node_size
+        idx2node.append(node)
+        node_size += 1
+    return idx2node, node2idx
+
+def partition_dict(d, num_chunks):
+    """
+    Robust partition: keeps original keys (node ids).
+    Output: list of dict chunks [{k:v}, {k:v}, ...]
+    """
+    keys = list(d.keys())
+    n = len(keys)
+    chunk_size = int(n / num_chunks) + 1
+
+    parts = []
+    for i in range(0, n, chunk_size):
+        subkeys = keys[i:i+chunk_size]
+        part = {k: d[k] for k in subkeys}
+        parts.append(part)
+
+    return parts
+
+
+
+def partition_list(vertices, workers):
+    batch_size = (len(vertices) - 1) // workers + 1
+    part_list = []
+    part = []
+    count = 0
+    for v1, nbs in enumerate(vertices):
+        part.append((v1, nbs))
+        count += 1
+        if count % batch_size == 0:
+            part_list.append(part)
+            part = []
+    if len(part) > 0:
+        part_list.append(part)
+    return part_list
+
+
+def partition_num(num, workers):
+    if num % workers == 0:
+        return [num // workers] * workers
+    else:
+        return [num // workers] * workers + [num % workers]
+
+import os
+import random
+import numpy as np
+import torch
+
+
+def set_seed(seed: int = 42, deterministic: bool = False):
+    random.seed(seed)
+    np.random.seed(seed)
+    torch.manual_seed(seed)
+    torch.cuda.manual_seed_all(seed)
+
+    if deterministic:
+        torch.backends.cudnn.deterministic = True
+        torch.backends.cudnn.benchmark = False
+
+
+def accuracy(logits, labels):
+    pred = logits.max(1)[1]
+    correct = pred.eq(labels).sum().item()
+    return correct / labels.size(0)
+
+def get_f1_score(logits, labels):
+    _, indices = torch.max(logits, dim=1)
+    f1 = f1_score(indices.cpu().numpy(), labels.cpu().numpy(), average="micro")
+    return f1
+
+# def set_seed(seed):
+#     np.random.seed(seed)
+#     random.seed(seed)
+#     if seed is not None:
+#         torch.manual_seed(seed)
+#         torch.cuda.manual_seed(seed)
+#     return seed
+

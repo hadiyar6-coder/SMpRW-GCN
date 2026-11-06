@@ -1,0 +1,3 @@
+id	N	train_ra	val_ra	dataset	feat_flag	backbone	normalize	aggr	alpha	beta	gama	lr	dr	h_dim	weight_decay	role_generate	feat_generate	seed	topk	force_regen
+gcn_tx_011_t	10	60	20	texas	True	gcn	degree	mean_concat	0	0.001	0.999	0.02	0.55	128	0.005	StrucWalkre	onehot	8	14	True
+gcn_cr_011_t	10	60	20	cornell	True	gcn	degree	mean_concat	0	0.001	0.999	0.02	0.55	128	0.005	StrucWalkre	onehot	8	14	True
